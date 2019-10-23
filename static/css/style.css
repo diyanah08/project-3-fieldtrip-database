@@ -12,3 +12,12 @@ body {
     margin: 0;
     padding: 0;
 }
+
+#add-form {
+    align-content: center;
+    width: 70%;
+}
+
+.form-check {
+    padding-left: 2.5rem;
+}
