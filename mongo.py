@@ -20,10 +20,14 @@ COLLECTION_NAME = 'fieldTripLocations'
 conn = pymongo.MongoClient(MONGO_URI)
 coll = conn[DATABASE_NAME][COLLECTION_NAME]
 
-@app.route('/')
+@app.route('/test')
 def indexTest():
     cursor = coll.find({});
     return render_template('index.template.html', results=cursor)
+    
+@app.route('/')
+def landingPage():
+    return render_template('landing_page.template.html')
 
 if __name__ == '__main__':
 	app.run(host=os.environ.get('IP'),
