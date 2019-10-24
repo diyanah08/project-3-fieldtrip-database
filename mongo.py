@@ -23,7 +23,7 @@ coll = conn[DATABASE_NAME][COLLECTION_NAME]
 
 themes = ["Occupation", "Nature", "Conservation", "Museums", "Others"]
 age = ["N1", "N2", "K1","K2", "All"]
-prices = ["Free", "Paid"]
+prices = ["All", "Free", "Paid"]
 
 @app.route('/test')
 def indexTest():
@@ -91,14 +91,14 @@ def searchForm():
             '$all' : search_theme
         }
         
-    
-    search_criteria['price'] = search_price
+    if  search_price != "All":
+        search_criteria['price'] = search_price 
     
     projection = {
         'name', 'price', 'themes', 'age_group', 'image'
     }
     
-    cursor = coll.find(search_criteria, projection)
+    cursor = coll.find(search_criteria, projection).sort([("name", pymongo.ASCENDING)])
     return render_template("search.template.html", results=cursor, age=age, themes=themes,
         prices=prices, search_name=search_name, search_age=search_age,
         search_theme=search_theme, search_price=search_price)
