@@ -63,52 +63,26 @@
         </div>
          <input type="submit">
        </form>
-       <table class='table'>
-            <thead>
-                <tr>
-                    <th>
-                        &nbsp;
-                    </th>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Themes
-                    </th>
-                    <th>
-                        Age Group
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                {%for each_result in results %}
-                <tr>
-                    <td>
-                        <a href = "{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"  height="100" width="100"/></a>
-                    </td>
-                    <td>
-                        {{each_result['name']}} 
-                    </td>
-                    <td>
-                        {% for each_theme in each_result['themes']%}
-                        <p>{{each_theme}}</p>
-                        {%endfor%}
-                    </td>
-                    <td>
-                        {% for each_age in each_result['age_group']%}
-                        <p>{{each_age}}</p>
-                        {%endfor%}
-                    </td>
-                    <td>
-                        {{each_result['price']}}
-                    </td>
-                </tr>
-                {%endfor%}
-            </tbody>
-       
+        {%for each_result in results %}       
+        <div class="card" style="width: 18rem;">
+          <a href = "{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"  height="100%" width="100%"/></a>
+          <div class="card-body">
+                 <p>{{each_result['price']}} {% for each_age in each_result['age_group']%}
+            |{{each_age}}|
+            {%endfor%}</p>
+            <h5 class="card-title">{{each_result['name']}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+             {% for each_theme in each_result['themes']%}
+            <li class="list-group-item">{{each_theme}}</li>
+            {%endfor%}
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Details</a>
+            <a href="#" class="card-link">Address</a>
+          </div>
+        </div>
+        {%endfor%}
     </div>
 
     <!-- Optional JavaScript -->
