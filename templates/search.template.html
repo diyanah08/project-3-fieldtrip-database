@@ -8,7 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="static/styles/style.css" type="text/css" />
 
   <title>Hello, world!</title>
 </head>
@@ -16,6 +16,7 @@
 <body>
   <h1>Search for a Field Trip Location</h1>
   <div class="container">
+    <div id = "add-form">
     <form method="GET">
 
       <div class="form-group row">
@@ -57,10 +58,11 @@
       </div>
       <input type="submit" value="Search">
     </form>
+    </div>
 
     <div class="row">
       {%for each_result in results %}
-      <div class="col-sm-3">
+      <div class="col-sm-3 mb-3 mt-2">
 
         <div class="card" style="height: 100%;">
           <div class="card-header">
@@ -76,8 +78,8 @@
             {%endfor%}
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Details</a>
-            <a href="#" class="card-link">Address</a>
+            <a href="{{ url_for('showDetails', location_id=each_result['_id']) }}">Details</a>
+            <a href="{{ url_for('showAddress', location_id=each_result['_id']) }}">Address</a>
           </div>
 
         </div>

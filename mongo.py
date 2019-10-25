@@ -3,6 +3,7 @@ import os
 from flask_uploads import UploadSet, IMAGES, configure_uploads
 import pymongo
 import re
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
@@ -47,7 +48,7 @@ def add():
     email = request.form['contact']
     description = request.form['description']
     activities = request.form.get('activities')
-    activitiesArr = [x.strip() for x in activities.split(',')]
+    activitiesArr = [x.strip() for x in activities.split("\n")]
     theme = request.form.getlist('theme')
     age_group = request.form.getlist('age-group')
     price = request.form.get('price')
@@ -78,7 +79,7 @@ def searchForm():
 
     search_criteria = {}
     print (search_criteria)
-    if search_name is not None and search_name is not "":
+    if search_name is not "":
         search_criteria["name"] = re.compile(r'{}'.format(search_name), re.I)
         
     if len(search_age) > 0:
@@ -103,6 +104,51 @@ def searchForm():
         prices=prices, search_name=search_name, search_age=search_age,
         search_theme=search_theme, search_price=search_price)
 
+@app.route('/location/<location_id>')
+def showAddress(location_id):
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    return render_template("show_address.template.html", result=result)
+
+@app.route('/details/<location_id>')
+def showDetails(location_id):
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    return render_template("show_details.template.html", result=result)
+
+@app.route('/edit/<location_id>')
+def editDetailsForm(location_id):
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
+    return render_template("edit_details.template.html", result=result, themes=themes)
+    
+@app.route('/edit/<location_id>', methods=['POST'])
+def editDetails(location_id):
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
+    description = request.form['edit-description']
+    activities = request.form.get('edit-activities')
+    activitiesArr = [x.strip() for x in activities.split('\n')]
+    theme = request.form.getlist('edit-theme')
+    
+    coll.update(
+       { "_id": ObjectId(location_id) },
+       {
+         '$set': { "description": description, "activities":activitiesArr, "themes":theme},
+       }
+    )
+    
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
+    return render_template("show_details.template.html", result=result)
 
 if __name__ == '__main__':
 	app.run(host=os.environ.get('IP'),
