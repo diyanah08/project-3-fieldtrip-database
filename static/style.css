@@ -14,10 +14,12 @@ body {
 }
 
 .buttonSearch {
+    width: 100vw;
+    padding: 50px;
     background-color: green;
-    position: relative;
-    left: 50vw;
-    margin-left: -30px;
-    top: 50vh;
-    z-index: 1;
+    color: white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 5;
 }
