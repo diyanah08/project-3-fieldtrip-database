@@ -22,4 +22,5 @@ body {
     top: 50%;
     margin-top: -50px;
     z-index: 5;
+    text-align: center;
 }

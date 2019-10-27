@@ -78,7 +78,6 @@ def searchForm():
     search_price = request.args.get('search-price')
 
     search_criteria = {}
-    print (search_criteria)
     if search_name is not "":
         search_criteria["name"] = re.compile(r'{}'.format(search_name), re.I)
         
@@ -149,6 +148,31 @@ def editDetails(location_id):
     })
     
     return render_template("show_details.template.html", result=result)
+
+@app.route('/delete/<location_id>')
+def deleteInfoPage(location_id):
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
+    return render_template('delete.template.html', result=result)
+
+@app.route('/delete/<location_id>', methods=['POST'])
+def deleteInfo(location_id):
+    
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
+    key = request.form['delete-key']
+    
+    if  key == "myfirstskool" or key == "littleskoolhouse" or key == "moekindy":
+        coll.remove(
+            { "_id": ObjectId(location_id) }
+        )
+    
+    cursor = coll.find({});
+    return render_template('index.template.html', results=cursor)
 
 if __name__ == '__main__':
 	app.run(host=os.environ.get('IP'),
