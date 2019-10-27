@@ -42,7 +42,7 @@ def addForm():
 
 @app.route('/add', methods=['POST'])
 def add():
-    image = request.files.get('image') #1 -- get the uploaded image
+    image = request.files.get('image')
     filename = images_upload_set.save(image)
     name = request.form.get('name')
     address = request.form['address']
@@ -155,20 +155,30 @@ def deleteInfoPage(location_id):
     
     return render_template('delete.template.html', result=result)
 
+@app.route('/delete-invalid')
+def cannotDelete():
+    cursor = coll.find({});
+    return render_template('delete.invalid.template.html', results=cursor)
+    
+@app.route('/deleted')
+def succeed():
+    cursor = coll.find({});
+    return render_template('delete.succeed.template.html', results=cursor)
+    
 @app.route('/delete/<location_id>', methods=['POST'])
 def deleteInfo(location_id):
     
     key = request.form['delete-key']
     
-    keyARR  = [x.strip() for x in KEY.split(",")]
+    keyArr = [x.strip() for x in KEY.split(",")]
     
-    for each_key in keyARR:
-        if  each_key == key:
+    for k in keyArr:
+        if  k == key:
             coll.remove(
                 { "_id": ObjectId(location_id) }
             )
-            
-    return redirect('/test')
+            return redirect('/deleted')
+    return redirect('/delete-invalid')
 
 if __name__ == '__main__':
 	app.run(host=os.environ.get('IP'),
