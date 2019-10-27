@@ -17,6 +17,7 @@ images_upload_set = UploadSet('images', IMAGES)
 configure_uploads(app, images_upload_set)
 
 MONGO_URI = os.getenv('MONGO_URI')
+KEY = os.getenv('KEY')
 DATABASE_NAME = 'fieldTripDB'
 COLLECTION_NAME = 'fieldTripLocations'
 conn = pymongo.MongoClient(MONGO_URI)
@@ -127,10 +128,7 @@ def editDetailsForm(location_id):
     
 @app.route('/edit/<location_id>', methods=['POST'])
 def editDetails(location_id):
-    result = coll.find_one({
-        '_id':ObjectId(location_id)
-    })
-    
+
     description = request.form['edit-description']
     activities = request.form.get('edit-activities')
     activitiesArr = [x.strip() for x in activities.split('\n')]
@@ -160,19 +158,17 @@ def deleteInfoPage(location_id):
 @app.route('/delete/<location_id>', methods=['POST'])
 def deleteInfo(location_id):
     
-    result = coll.find_one({
-        '_id':ObjectId(location_id)
-    })
-    
     key = request.form['delete-key']
     
-    if  key == "myfirstskool" or key == "littleskoolhouse" or key == "moekindy":
-        coll.remove(
-            { "_id": ObjectId(location_id) }
-        )
+    keyARR  = [x.strip() for x in KEY.split(",")]
     
-    cursor = coll.find({});
-    return render_template('index.template.html', results=cursor)
+    for each_key in keyARR:
+        if  each_key == key:
+            coll.remove(
+                { "_id": ObjectId(location_id) }
+            )
+            
+    return redirect('/test')
 
 if __name__ == '__main__':
 	app.run(host=os.environ.get('IP'),
