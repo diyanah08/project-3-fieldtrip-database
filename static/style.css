@@ -6,6 +6,24 @@ body {
     padding: 0px;
 }
 
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+}
+
+p {
+    font-family: 'Questrial', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.button {
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
 .carousel-item img {
     width: 100vw;
     height: 100vh;
@@ -16,8 +34,8 @@ body {
 .buttonSearch {
     width: 100vw;
     padding: 50px;
-    background-color: green;
-    color: white;
+    background-color: rgba(201,212,57, 0.75);
+    color: snow;
     position: absolute;
     top: 50%;
     margin-top: -50px;

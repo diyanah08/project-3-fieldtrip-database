@@ -27,14 +27,14 @@ themes = ["Occupation", "Nature", "Conservation", "Museums", "Others"]
 age = ["N1", "N2", "K1","K2", "All"]
 prices = ["All", "Free", "Paid"]
 
-@app.route('/test')
-def indexTest():
-    cursor = coll.find({});
-    return render_template('index.template.html', results=cursor)
-    
 @app.route('/')
 def landingPage():
     return render_template('landing_page.template.html')
+    
+@app.route('/all')
+def indexTest():
+    cursor = coll.find({});
+    return render_template('index.template.html', results=cursor)
 
 @app.route('/add')
 def addForm():
