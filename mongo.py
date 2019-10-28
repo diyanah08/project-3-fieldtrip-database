@@ -7,11 +7,11 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-TOP_LEVEL_DIR = os.path.abspath(os.curdir) #1
-upload_dir = '/static/uploads/img/' #2
-app.config["UPLOADS_DEFAULT_DEST"] = TOP_LEVEL_DIR + upload_dir #3
-app.config["UPLOADED_IMAGES_DEST"] = TOP_LEVEL_DIR + upload_dir #4
-app.config["UPLOADED_IMAGES_URL"] = upload_dir #5
+TOP_LEVEL_DIR = os.path.abspath(os.curdir)
+upload_dir = '/static/uploads/img/'
+app.config["UPLOADS_DEFAULT_DEST"] = TOP_LEVEL_DIR + upload_dir
+app.config["UPLOADED_IMAGES_DEST"] = TOP_LEVEL_DIR + upload_dir
+app.config["UPLOADED_IMAGES_URL"] = upload_dir
 
 images_upload_set = UploadSet('images', IMAGES)
 configure_uploads(app, images_upload_set)
@@ -42,6 +42,7 @@ def addForm():
 
 @app.route('/add', methods=['POST'])
 def add():
+    
     image = request.files.get('image')
     filename = images_upload_set.save(image)
     name = request.form.get('name')
@@ -158,12 +159,12 @@ def deleteInfoPage(location_id):
 @app.route('/delete-invalid')
 def cannotDelete():
     cursor = coll.find({});
-    return render_template('delete.invalid.template.html', results=cursor)
+    return render_template('delete_invalid.template.html', results=cursor)
     
 @app.route('/deleted')
 def succeed():
     cursor = coll.find({});
-    return render_template('delete.succeed.template.html', results=cursor)
+    return render_template('delete_succeed.template.html', results=cursor)
     
 @app.route('/delete/<location_id>', methods=['POST'])
 def deleteInfo(location_id):

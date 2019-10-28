@@ -2,46 +2,45 @@
 
 {%block content%}
 
-<div class = "container">
-    <h1>{{result['name']}}</h1>
-    <table class='table'>
-        <thead>
-            <tr>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Activities
-                </th>
-                <th>
-                    Themes
-                </th>
-                <th>
-                    &nbsp;
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    {{result['description']}}
-                </td>
-                <td>
-                    {% for each_activity in result['activities']%}
-                        <p>{{each_activity}}</p>
-                    {%endfor%}
-                </td>
-                <td>
-                    {% for each_theme in result['themes']%}
-                        <p>{{each_theme}}</p>
-                    {%endfor%}
-                </td>
-                <td>
-                    <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}">Edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<h1 class = "headers">{{result['name']}}</h1>
+<input type="submit" class="button coloredbtn selectbtn" value="Back" onclick="goBack()">
+<table class='table'>
+    <thead>
+        <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                Activities
+            </th>
+            <th>
+                Themes
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{result['description']}}
+            </td>
+            <td>
+                {% for each_activity in result['activities']%}
+                    <p class = "details">{{each_activity}}</p>
+                {%endfor%}
+            </td>
+            <td>
+                {% for each_theme in result['themes']%}
+                    <p class = "details">{{each_theme}}</p>
+                {%endfor%}
+            </td>
+            <td>
+                <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><input type="submit" class="button coloredbtn view" value="Edit"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 {%endblock%}

@@ -2,109 +2,108 @@
 
 {%block content%}
 
-<div class="container">
-    <button onclick="goBack()">Back</button>
-    <table class='table'>
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Address
-                </th>
-                <th>
-                    Email
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Activities
-                </th>
-                <th>
-                    Themes
-                </th>
-                <th>
-                    Age Group
-                </th>
-                <th>
-                    Price
-                </th>
-                <th>
-                    Image
-                </th>
-                <th>
-                    &nbsp;
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    {{result['name']}}
-                </td>
-                <td>
-                    {{result['address']}}
-                </td>
-                <td>
-                    {{result['email']}}
-                </td>
-                <td>
-                    {{result['description']}}
-                </td>
-                <td>
-                    {% for each_activity in result['activities']%}
-                    <p>{{each_activity}}</p>
-                    {%endfor%}
-                </td>
-                <td>
-                    {% for each_theme in result['themes']%}
-                        <p>{{each_theme}}</p>
-                    {%endfor%}
-                </td>
-                <td>
-                    {% for each_age in result['age_group']%}
-                        <p>{{each_age}}</p>
-                    {%endfor%}
-                </td>
-                <td>
-                    {{result['price']}}
-                </td>
-                <td>
-                    <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}"  height="100" width="100"/></a>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete</button>
-       
-                    <div class="modal fade" id="delete-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                </div>
-                                <form method="POST">
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="confirm Message" class="col-form-label"><h6>Item ID: [{{result['_id']}}] </h6>Please enter your KEY to confirm delete.</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="delete-key" class="col-form-label">KEY:</label>
-                                            <textarea class="form-control" name="delete-key"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="submit" value="confirm">
-                                    </div>
-                                </form>
+<input type="submit" class="button coloredbtn selectbtn" value="Back" onclick="goBack()">
+<table class='table'>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Activities
+            </th>
+            <th>
+                Themes
+            </th>
+            <th>
+                Age Group
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{result['name']}}
+            </td>
+            <td>
+                {{result['address']}}
+            </td>
+            <td>
+                {{result['email']}}
+            </td>
+            <td>
+                {{result['description']}}
+            </td>
+            <td>
+                {% for each_activity in result['activities']%}
+                <p>{{each_activity}}</p>
+                {%endfor%}
+            </td>
+            <td>
+                {% for each_theme in result['themes']%}
+                    <p>{{each_theme}}</p>
+                {%endfor%}
+            </td>
+            <td>
+                {% for each_age in result['age_group']%}
+                    <p>{{each_age}}</p>
+                {%endfor%}
+            </td>
+            <td>
+                {{result['price']}}
+            </td>
+            <td>
+                <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}"  height="100" width="100"/></a>
+            </td>
+            <td>
+                <button type="button" class="button coloredbtn selectbtn" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete</button>
+   
+                <div class="modal fade" id="delete-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
+                            <form method="POST">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="confirm Message" class="col-form-label"><h6>Item ID: [{{result['_id']}}] </h6>Please enter your KEY to confirm delete.</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="delete-key" class="col-form-label">KEY:</label>
+                                        <textarea class="form-control" name="delete-key"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="submit" class="button coloredbtn selectbtn" value="Confirm">
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 
 {%endblock%}

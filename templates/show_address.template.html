@@ -2,41 +2,35 @@
 
 {%block content%}
 
-<div class = "container">
-    <table class='table'>
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Address
-                </th>
-                <th>
-                    Email
-                </th>
-                <th>
-                    Image
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    {{result['name']}} 
-                </td>
-                <td>
-                    {{result['address']}}
-                </td>
-                <td>
-                    {{result['email']}}
-                </td>
-                <td>
-                    <a href = "{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}"  height="100" width="100"/></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<h1 class = "headers">{{result['name']}}</h1>
+<input type="submit" class="button coloredbtn selectbtn" value="Back" onclick="goBack()">
+<table class='table'>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{result['name']}} 
+            </td>
+            <td>
+                {{result['address']}}
+            </td>
+            <td>
+                {{result['email']}}
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 {%endblock%}

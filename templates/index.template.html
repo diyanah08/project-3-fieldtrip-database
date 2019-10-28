@@ -2,8 +2,6 @@
 
 {%block content%}
 
-<div class="container">
-    
     {%block alert%}
     {%endblock%}
     
@@ -14,16 +12,7 @@
                     Name
                 </th>
                 <th>
-                    Address
-                </th>
-                <th>
-                    Email
-                </th>
-                <th>
                     Description
-                </th>
-                <th>
-                    Activities
                 </th>
                 <th>
                     Themes
@@ -46,30 +35,19 @@
         {%for each_result in results %}
             <tr>
                 <td>
-                    {{each_result['name']}}
-                </td>
-                <td>
-                    {{each_result['address']}}
-                </td>
-                <td>
-                    {{each_result['email']}}
+                    <p class = "search-name">{{each_result['name']}}</p>
                 </td>
                 <td>
                     {{each_result['description']}}
                 </td>
                 <td>
-                    {% for each_activity in each_result['activities']%}
-                        <p>{{each_activity}}</p>
-                    {%endfor%}
-                </td>
-                <td>
                     {% for each_theme in each_result['themes']%}
-                        <p>{{each_theme}}</p>
+                        <p class = "details">{{each_theme}}</p>
                     {%endfor%}
                 </td>
                 <td>
                     {% for each_age in each_result['age_group']%}
-                        <p>{{each_age}}</p>
+                        <p class = "details">{{each_age}}</p>
                     {%endfor%}
                 </td>
                 <td>
@@ -79,12 +57,11 @@
                     <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"  height="100" width="100"/></a>
                 </td>
                 <td>
-                    <a href="{{ url_for('deleteInfoPage', location_id=each_result['_id']) }}">View</a>
+                    <a href="{{ url_for('deleteInfoPage', location_id=each_result['_id']) }}"><button class = "button coloredbtn view">View</button></a>
                 </td>
             </tr>
         {%endfor%}
     </tbody>
     </table>
-</div>
 
 {%endblock%}
