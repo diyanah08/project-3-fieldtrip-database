@@ -1,9 +1,68 @@
-{% extends "index.template.html" %}
+{% extends "layout.template.html" %}
 
-{%block alert%}
+{%block content%}
 
-<div class="alert alert-danger" role="alert">
-  Unable to delete. Invalid KEY.
-</div>
+    <div class="alert alert-danger" role="alert">
+      Unable to delete. Invalid KEY.
+    </div>
+    
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Themes
+                </th>
+                <th>
+                    Age Group
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        {%for each_result in results %}
+            <tr>
+                <td>
+                    <p class = "search-name">{{each_result['name']}}</p>
+                </td>
+                <td>
+                    {{each_result['description']}}
+                </td>
+                <td>
+                    {% for each_theme in each_result['themes']%}
+                        <p class = "details">{{each_theme}}</p>
+                    {%endfor%}
+                </td>
+                <td>
+                    {% for each_age in each_result['age_group']%}
+                        <p class = "details">{{each_age}}</p>
+                    {%endfor%}
+                </td>
+                <td>
+                    {{each_result['price']}}
+                </td>
+                <td>
+                    <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"  height="100" width="100"/></a>
+                </td>
+                <td>
+                    <a href="{{ url_for('deleteInfoPage', location_id=each_result['_id']) }}"><button class = "button coloredbtn view">View</button></a>
+                </td>
+            </tr>
+        {%endfor%}
+    </tbody>
+    </table>
 
 {%endblock%}

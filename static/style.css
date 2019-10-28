@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    font-family: 'Bree Serif', serif;
+    font-family: 'Questrial', sans-serif;
     font-size: 80px;
     margin: 0;
 }
@@ -20,7 +20,7 @@ p {
 }
 
 .button {
-    font-family: 'Bree Serif', serif;
+    font-family: 'Questrial', sans-serif;
     font-weight: bolder;
     border: 2px solid white;
 }
@@ -82,7 +82,7 @@ p {
 }
 
 .table {
-    font-family: 'Bree Serif', serif;    
+    font-family: 'Questrial', sans-serif;    
 }
 
 th {
@@ -117,7 +117,7 @@ td {
 
 .card {
     padding: 0px;
-    font-family: 'Bree Serif', serif;
+    font-family: 'Questrial', sans-serif;
     
 }
 
@@ -135,4 +135,11 @@ td {
 
 .card-body {
     padding: 10px;
+}
+
+.alert {
+    margin: 10px;
+    font-family: 'Bree Serif', serif;
+    font-size: 17px;
+    font-weight: bolder;
 }
