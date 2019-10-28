@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class= "find">
-      <input type="submit" class="button coloredbtn selectbtn" value="Search">
+      <input type="submit" class="button colored-btn select-btn" value="Search">
     </div>
   </form>
 </div>
@@ -65,8 +65,8 @@
           {%endfor%}
         </ul>
         <div class="card-body">
-          <a href="{{ url_for('showDetails', location_id=each_result['_id']) }}"><input type="submit" class="button coloredbtn view" value="Details"></a>
-          <a href="{{ url_for('showAddress', location_id=each_result['_id']) }}"><input type="submit" class="button coloredbtn view" value="Contact"></a>
+          <a href="{{ url_for('showDetails', location_id=each_result['_id']) }}"><input type="submit" class="button colored-btn view-and-delete" value="Details"></a>
+          <a href="{{ url_for('showAddress', location_id=each_result['_id']) }}"><input type="submit" class="button colored-btn view-and-delete" value="Contact"></a>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+/*main styles*/
+
 html,
 body {
     height: 100vh;
@@ -19,6 +21,34 @@ p {
     margin-bottom: 5px;
 }
 
+.headers {
+    font-family: 'Bree Serif', serif;
+    font-size: 45px;
+    margin: 15px;
+    text-align: center;
+}
+
+
+/*navbar styles*/
+
+.navbar-brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    color: darkseagreen !important;
+}
+
+.nav-link {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+}
+
+.bg-light {
+    background-color: snow !important;
+}
+
+
+/*button styles*/
+
 .button {
     font-family: 'Questrial', sans-serif;
     font-weight: bolder;
@@ -30,6 +60,22 @@ p {
     margin: 10px;
     background-color: white;
 }
+
+.view-and-delete {
+    font-size: 16px;
+}
+
+.colored-btn {
+    margin: 5px;
+    background-color: rgba(201,212,57, 0.75);
+}
+
+.select-btn {
+    font-size: 20px;
+}
+
+
+/*carousel styles*/
 
 .carousel-item img {
     width: 100vw;
@@ -50,51 +96,19 @@ p {
     text-align: center;
 }
 
-.container-fluid {
-    margin: 0px 50px;
-}
 
-.navbar-brand {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 40px;
-    color: darkseagreen !important;
-}
-
-.nav-link {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 20px;
-}
-
-.bg-light {
-    background-color: snow !important;
-}
-
-.headers {
-    font-family: 'Bree Serif', serif;
-    font-size: 45px;
-    margin: 15px;
-    text-align: center;
-}
-
-.add-form {
-    font-family: 'Questrial', sans-serif;
-    font-size: 15px;
-}
+/*table styles*/
 
 .table {
     font-family: 'Questrial', sans-serif;    
 }
 
 th {
-    font-size: 17px;
+    font-size: 20px;
 }
 
 td {
-    font-size: 13px;
-}
-
-.details {
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .search-name {
@@ -102,23 +116,24 @@ td {
     font-weight: bolder;
 }
 
-.coloredbtn {
-    margin: 5px;
-    background-color: rgba(201,212,57, 0.75);
+.details {
+    font-size: 16px;
+    font-weight: normal;
 }
 
-.view {
-    font-size: 13px;
+/*form styles*/
+
+.add-form {
+    font-family: 'Questrial', sans-serif;
+    font-size: 15px;
 }
 
-.selectbtn {
-    font-size: 18px;
-}
+
+/*card styles*/
 
 .card {
     padding: 0px;
     font-family: 'Questrial', sans-serif;
-    
 }
 
 .card-header {
@@ -136,6 +151,9 @@ td {
 .card-body {
     padding: 10px;
 }
+
+
+/*alert styles*/
 
 .alert {
     margin: 10px;

@@ -4,7 +4,8 @@
 
     {%block alert%}
     {%endblock%}
-    
+   
+    <h1 class = "headers">All Locations</h1>
     <table class='table'>
         <thead>
             <tr>
@@ -57,7 +58,7 @@
                     <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"  height="100" width="100"/></a>
                 </td>
                 <td>
-                    <a href="{{ url_for('deleteInfoPage', location_id=each_result['_id']) }}"><button class = "button coloredbtn view">View</button></a>
+                    <a href="{{ url_for('deleteInfoPage', location_id=each_result['_id']) }}"><button class = "button colored-btn view-and-delete">View</button></a>
                 </td>
             </tr>
         {%endfor%}

@@ -2,13 +2,11 @@
 
 {%block content%}
 
-<input type="submit" class="button coloredbtn selectbtn" value="Back" onclick="goBack()">
+<input type="submit" class="button colored-btn select-btn" value="Back" onclick="goBack()">
+<h1 class = "headers">{{result['name']}}</h1>
 <table class='table'>
     <thead>
         <tr>
-            <th>
-                Name
-            </th>
             <th>
                 Address
             </th>
@@ -41,9 +39,6 @@
     <tbody>
         <tr>
             <td>
-                {{result['name']}}
-            </td>
-            <td>
                 {{result['address']}}
             </td>
             <td>
@@ -54,17 +49,17 @@
             </td>
             <td>
                 {% for each_activity in result['activities']%}
-                <p>{{each_activity}}</p>
+                    <p class = "details">{{each_activity}}</p>
                 {%endfor%}
             </td>
             <td>
                 {% for each_theme in result['themes']%}
-                    <p>{{each_theme}}</p>
+                    <p class = "details">{{each_theme}}</p>
                 {%endfor%}
             </td>
             <td>
                 {% for each_age in result['age_group']%}
-                    <p>{{each_age}}</p>
+                    <p class = "details">{{each_age}}</p>
                 {%endfor%}
             </td>
             <td>
@@ -74,7 +69,7 @@
                 <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}"  height="100" width="100"/></a>
             </td>
             <td>
-                <button type="button" class="button coloredbtn selectbtn" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete</button>
+                <button type="button" class="button colored-btn select-btn" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete</button>
    
                 <div class="modal fade" id="delete-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -94,7 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <input type="submit" class="button coloredbtn selectbtn" value="Confirm">
+                                    <input type="submit" class="button colored-btn view-and-delete" value="Confirm">
                                 </div>
                             </form>
                         </div>

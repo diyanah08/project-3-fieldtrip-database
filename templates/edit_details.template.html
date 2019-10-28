@@ -2,7 +2,8 @@
 
 {%block content%}
 
-<input type="submit" class="button coloredbtn selectbtn" value="Back" onclick="goBack()">
+<input type="submit" class="button colored-btn select-btn" value="Back" onclick="goBack()">
+<h1 class = "headers">{{result['name']}}</h1>
 <form class='form' enctype="multipart/form-data" method="POST">
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Description:</label>
@@ -28,7 +29,7 @@
         {%endfor%}
       </div>
   </div>
-   <input type="submit" class="button coloredbtn selectbtn" value="Edit">
+   <input type="submit" class="button colored-btn view-and-delete" value="Edit">
 </form>
 
 {%endblock%}
