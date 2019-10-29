@@ -55,7 +55,7 @@
         <div class="card-header">
           <h5 class="card-title">{{each_result['name']}}</h5>
         </div>
-        <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"/></a>
+        <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}" class="card-img-top"/></a>
         <div class="card-body">
           {{each_result['price']}} {% for each_age in each_result['age_group']%} |{{each_age}}| {%endfor%}
         </div>

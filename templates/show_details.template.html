@@ -3,44 +3,15 @@
 {%block content%}
 
 <input type="submit" class="button colored-btn select-btn" value="Back" onclick="goBack()">
-<h1 class = "headers">{{result['name']}}</h1>
-<table class='table'>
-    <thead>
-        <tr>
-            <th>
-                Description
-            </th>
-            <th>
-                Activities
-            </th>
-            <th>
-                Themes
-            </th>
-            <th>
-                &nbsp;
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                {{result['description']}}
-            </td>
-            <td>
-                {% for each_activity in result['activities']%}
-                    <p class = "details">{{each_activity}}</p>
-                {%endfor%}
-            </td>
-            <td>
-                {% for each_theme in result['themes']%}
-                    <p class = "details">{{each_theme}}</p>
-                {%endfor%}
-            </td>
-            <td>
-                <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><input type="submit" class="button colored-btn view" value="Edit"></a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="card">
+  <div class="card-body view-one">
+    <h1 class = "headers">{{result['name']}}</h1>
+    <h5 class="card-title">{{result['description']}}</h5>
+    <p class="details">Activities: {% for each_activity in result['activities']%}| {{each_activity}} |{%endfor%}</p>
+    <p class="details">Themes: {% for each_theme in result['themes']%}| {{each_theme}} |{%endfor%}</p>
+    <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><input type="submit" class="button colored-btn view" value="Edit"></a>
+  </div>
+  <img src="{{result['image']['image_url']}}" class="card-img-top">
+</div>
 
 {%endblock%}

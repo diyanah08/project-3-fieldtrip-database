@@ -41,12 +41,6 @@ p {
     text-align: center;
 }
 
-img {
-    height: 328px;
-    width: 328px;
-}
-
-
 /*navbar styles*/
 
 .navbar {
@@ -208,6 +202,10 @@ td {
     border: 2px solid snow;
 }
 
+.card-img {
+    height: 100%;
+}
+
 .card-header {
     padding: 10px;
     background-color: rgba(244,249,233,0.45);
@@ -228,6 +226,10 @@ td {
 
 .card-body {
     padding: 10px;
+}
+
+.view-one {
+    text-align: center;
 }
 
 .list-group-item {
