@@ -95,8 +95,6 @@ img {
 
 .select-btn {
     font-size: 20px;
-    position: absolute; 
-    right: 200px;
 }
 
 .button:focus,
@@ -195,9 +193,15 @@ td {
     padding-left: 5px;
 }
 
+.form-control {
+    background-color: snow;
+    border: 1px solid black;
+}
+
 /*card styles*/
 
 .card {
+    margin: 2px;
     padding: 5px;
     font-family: 'Questrial', sans-serif;
     background-color: rgba(244,249,233,0.45);
