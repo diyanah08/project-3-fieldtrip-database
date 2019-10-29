@@ -50,12 +50,12 @@
 
 <div class="row">
   {%for each_result in results %}
-    <div class="col-sm-3 mb-3 mt-2">
+    <div class="col-sm-4 mb-3 mt-2">
       <div class="card" style="height: 100%;">
         <div class="card-header">
           <h5 class="card-title">{{each_result['name']}}</h5>
         </div>
-        <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"  height="180px" width="100%"/></a>
+        <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"/></a>
         <div class="card-body">
           {{each_result['price']}} {% for each_age in each_result['age_group']%} |{{each_age}}| {%endfor%}
         </div>

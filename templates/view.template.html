@@ -4,76 +4,31 @@
 
 <input type="submit" class="button colored-btn select-btn" value="Back" onclick="goBack()">
 <h1 class = "headers">{{result['name']}}</h1>
-<table class='table'>
-    <thead>
-        <tr>
-            <th>
-                Address
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Activities
-            </th>
-            <th>
-                Themes
-            </th>
-            <th>
-                Age Group
-            </th>
-            <th>
-                Price
-            </th>
-            <th>
-                Image
-            </th>
-            <th>
-                &nbsp;
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                {{result['address']}}
-            </td>
-            <td>
-                {{result['email']}}
-            </td>
-            <td>
-                {{result['description']}}
-            </td>
-            <td>
-                {% for each_activity in result['activities']%}
-                    <p class = "details">{{each_activity}}</p>
-                {%endfor%}
-            </td>
-            <td>
-                {% for each_theme in result['themes']%}
-                    <p class = "details">{{each_theme}}</p>
-                {%endfor%}
-            </td>
-            <td>
-                {% for each_age in result['age_group']%}
-                    <p class = "details">{{each_age}}</p>
-                {%endfor%}
-            </td>
-            <td>
-                {{result['price']}}
-            </td>
-            <td>
-                <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}"  height="100" width="100"/></a>
-            </td>
-            <td>
-                <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><button type="button" class="button no-color-btn view-and-delete">Edit Details</button></a>
-                <a href="{{ url_for('editAddressForm', location_id=result['_id']) }}"><button type="button" class="button no-color-btn view-and-delete">Edit Contact</button></a>
-                <button type="button" class="button colored-btn select-btn" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete</button>
-   
-                <div class="modal fade" id="delete-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="card mb-3" style="max-width: 100%;">
+  <div class="row no-gutters">
+    <div class="col-md-4 card-image">
+      <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}"/></a>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class = "card-title-bigger">{{result['price']}}</h5>
+        <p class="details">Address: {{result['address']}}</p>
+        <p class="details">Email: {{result['email']}}</p>
+        <p class="details">Description: {{result['description']}}</p>
+        <p class="details">Activities: {% for each_activity in result['activities']%}| {{each_activity}} |{%endfor%}</p>
+        <p class="details">Themes: {% for each_theme in result['themes']%}| {{each_theme}} |{%endfor%}</p>
+        <p class="details">Age-group: {% for each_age in result['age_group']%}| {{each_age}} |{%endfor%}</p>
+        <div>&nbsp;</div>
+        <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><button type="button" class="button colored-btn view-and-delete">Edit Details</button></a>
+        <a href="{{ url_for('editAddressForm', location_id=result['_id']) }}"><button type="button" class="button colored-btn view-and-delete">Edit Contact</button></a>
+        <button type="button" class="button colored-btn view-and-delete" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete Entry</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delete-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">

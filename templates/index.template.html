@@ -10,6 +10,9 @@
         <thead>
             <tr>
                 <th>
+                    &nbsp;
+                </th>
+                <th>
                     Name
                 </th>
                 <th>
@@ -25,9 +28,6 @@
                     Price
                 </th>
                 <th>
-                    Image
-                </th>
-                <th>
                     &nbsp;
                 </th>
             </tr>
@@ -35,6 +35,9 @@
         <tbody>
         {%for each_result in results %}
             <tr>
+                <td>
+                    <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"/></a>
+                </td>
                 <td>
                     <p class = "search-name">{{each_result['name']}}</p>
                 </td>
@@ -53,9 +56,6 @@
                 </td>
                 <td>
                     {{each_result['price']}}
-                </td>
-                <td>
-                    <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"  height="100" width="100"/></a>
                 </td>
                 <td>
                     <a href="{{ url_for('viewInfoPage', location_id=each_result['_id']) }}"><button class = "button colored-btn view-and-delete">View</button></a>

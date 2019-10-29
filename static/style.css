@@ -32,6 +32,11 @@ p {
     text-align: center;
 }
 
+img {
+    height: 328px;
+    width: 328px;
+}
+
 
 /*navbar styles*/
 
@@ -42,12 +47,14 @@ p {
 }
 
 .nav-link {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Questrial', sans-serif;
     font-size: 20px;
+    font-weight: bolder;
+    color: darkseagreen !important;
 }
 
 .bg-light {
-    background-color: snow !important;
+    background-color: #F4F9E9 !important;
 }
 
 
@@ -56,13 +63,12 @@ p {
 .button {
     font-family: 'Questrial', sans-serif;
     font-weight: bolder;
-    border: 2px solid white;
+    margin: 5px;
 }
 
 .begin {
     font-size: 20px;
     margin: 10px;
-    background-color: white;
 }
 
 .view-and-delete {
@@ -70,14 +76,7 @@ p {
 }
 
 .colored-btn {
-    margin: 5px;
     background-color: rgba(201,212,57, 0.75);
-}
-
-.no-color-btn {
-    margin: 0px;
-    background-color: transparent;
-    color: rgba(201,212,57, 0.75);
 }
 
 .select-btn {
@@ -94,20 +93,19 @@ select:focus {
 #myBtn {
   display: none; 
   position: fixed; 
-  bottom: 20px; 
+  bottom: 5px; 
   right: 200px;
   z-index: 99; 
   font-size: 30px;
-  background-color: transparent;
+  padding: 5px;
 }
 .fa-angle-up {
-    color: rgba(201,212,57, 0.75);
+    color: black;
     padding: 10px;
 }
 
 .fa-angle-up:hover {
-    color: black;
-    background-color: rgba(201,212,57, 0.75);
+    color: rgba(201,212,57, 0.75);
 }
 
 
@@ -123,8 +121,8 @@ select:focus {
 .buttonSearch {
     width: 100vw;
     padding: 15px;
-    background-color: rgba(201,212,57, 0.75);
-    color: snow;
+    background-color: rgba(244,249,233, 0.75);
+    color: black;
     position: absolute;
     top: 50%;
     margin-top: -100px;
@@ -137,6 +135,11 @@ select:focus {
 
 .table {
     font-family: 'Questrial', sans-serif;    
+}
+
+.table img {
+    height: 200px;
+    width: 200px;
 }
 
 th {
@@ -175,20 +178,25 @@ td {
 /*card styles*/
 
 .card {
-    padding: 0px;
+    padding: 5px;
     font-family: 'Questrial', sans-serif;
 }
 
 .card-header {
     padding: 10px;
-    background-color: snow;
+    background-color: #F4F9E9;
 }
 
 .card-title {
     padding: 10px;
     margin: 3px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
+}
+
+.card-title-bigger {
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 .card-body {
