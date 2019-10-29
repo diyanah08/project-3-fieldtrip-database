@@ -176,13 +176,13 @@ def editDetails(location_id):
     
     return render_template("show_details.template.html", result=result)
 
-@app.route('/delete/<location_id>')
-def deleteInfoPage(location_id):
+@app.route('/view/<location_id>')
+def viewInfoPage(location_id):
     result = coll.find_one({
         '_id':ObjectId(location_id)
     })
     
-    return render_template('delete.template.html', result=result)
+    return render_template('view.template.html', result=result)
 
 @app.route('/delete-invalid')
 def cannotDelete():
@@ -194,7 +194,7 @@ def succeed():
     cursor = coll.find({});
     return render_template('delete_succeed.template.html', results=cursor)
     
-@app.route('/delete/<location_id>', methods=['POST'])
+@app.route('/view/<location_id>', methods=['POST'])
 def deleteInfo(location_id):
     
     key = request.form['delete-key']
