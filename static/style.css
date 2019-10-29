@@ -70,8 +70,19 @@ p {
     background-color: rgba(201,212,57, 0.75);
 }
 
+.no-color-btn {
+    margin: 0px;
+    background-color: transparent;
+    color: rgba(201,212,57, 0.75);
+}
+
 .select-btn {
     font-size: 20px;
+}
+
+.button:focus,
+select:focus {
+  outline: none;
 }
 
 

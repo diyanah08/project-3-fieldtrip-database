@@ -47,7 +47,7 @@ def add():
     filename = images_upload_set.save(image)
     name = request.form.get('name')
     address = request.form['address']
-    email = request.form['contact']
+    email = request.form.get['contact']
     description = request.form['description']
     activities = request.form.get('activities')
     activitiesArr = [x.strip() for x in activities.split("\n")]
@@ -125,7 +125,7 @@ def editAddress(location_id):
 
     name = request.form['edit-name']
     address = request.form.get('edit-address')
-    email = request.form.getlist('edit-email')
+    email = request.form.get('edit-email')
     
     coll.update(
        { "_id": ObjectId(location_id) },

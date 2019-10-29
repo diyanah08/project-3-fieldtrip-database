@@ -69,6 +69,8 @@
                 <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}"  height="100" width="100"/></a>
             </td>
             <td>
+                <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><button type="button" class="button no-color-btn view-and-delete">Edit Details</button></a>
+                <a href="{{ url_for('editAddressForm', location_id=result['_id']) }}"><button type="button" class="button no-color-btn view-and-delete">Edit Contact</button></a>
                 <button type="button" class="button colored-btn select-btn" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete</button>
    
                 <div class="modal fade" id="delete-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -76,7 +78,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <button type="button" class="button close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <form method="POST">
                                 <div class="modal-body">
