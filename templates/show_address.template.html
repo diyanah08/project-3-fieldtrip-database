@@ -16,6 +16,9 @@
             <th>
                 Email
             </th>
+            <th>
+                &nbsp;
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +31,9 @@
             </td>
             <td>
                 {{result['email']}}
+            </td>
+            <td>
+                <a href="{{ url_for('editAddressForm', location_id=result['_id']) }}"><input type="submit" class="button colored-btn view" value="Edit"></a>
             </td>
         </tr>
     </tbody>

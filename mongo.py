@@ -25,7 +25,7 @@ coll = conn[DATABASE_NAME][COLLECTION_NAME]
 
 themes = ["Occupation", "Nature", "Conservation", "Museums", "Others"]
 age = ["N1", "N2", "K1","K2", "All"]
-prices = ["All", "Free", "Paid"]
+prices = ["Both", "Free", "Paid"]
 
 @app.route('/')
 def landingPage():
@@ -69,7 +69,7 @@ def add():
             }
     })
     
-    return render_template('add_new.template.html', themes=themes, age=age, prices=prices, image=image, filename=filename, name=name, address=address, email=email, description=description, activities=activities, theme=theme, age_group=age_group, price=price)
+    return render_template('add_success.template.html', themes=themes, age=age, prices=prices, image=image, filename=filename, name=name, address=address, email=email, description=description, activities=activities, theme=theme, age_group=age_group, price=price)
 
 @app.route('/search')
 def searchForm():
@@ -93,7 +93,7 @@ def searchForm():
             '$all' : search_theme
         }
         
-    if  search_price != "All":
+    if  search_price != "Both":
         search_criteria['price'] = search_price 
     
     projection = {
@@ -110,6 +110,34 @@ def showAddress(location_id):
     result = coll.find_one({
         '_id':ObjectId(location_id)
     })
+    return render_template("show_address.template.html", result=result)
+
+@app.route('/edit-location/<location_id>')
+def editAddressForm(location_id):
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
+    return render_template("edit_address.template.html", result=result, themes=themes)
+    
+@app.route('/edit-location/<location_id>', methods=['POST'])
+def editAddress(location_id):
+
+    name = request.form['edit-name']
+    address = request.form.get('edit-address')
+    email = request.form.getlist('edit-email')
+    
+    coll.update(
+       { "_id": ObjectId(location_id) },
+       {
+         '$set': { "name": name, "address":address, "email":email},
+       }
+    )
+    
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
     return render_template("show_address.template.html", result=result)
 
 @app.route('/details/<location_id>')
