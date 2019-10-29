@@ -6,6 +6,15 @@ body {
     width: 100vw;
     margin: 0px;
     padding: 0px;
+    background-color: #FAE8EB;
+}
+
+.container {
+    background-color: rgba(244,249,233,0.65);
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 0px;
+    border-radius: 10px;
 }
 
 .row {
@@ -40,6 +49,11 @@ img {
 
 /*navbar styles*/
 
+.navbar {
+    margin: 0px;
+    border-radius: 10px;
+}
+
 .navbar-brand {
     font-family: 'Permanent Marker', cursive;
     font-size: 40px;
@@ -54,7 +68,7 @@ img {
 }
 
 .bg-light {
-    background-color: #F4F9E9 !important;
+    background-color: rgba(244,249,233,0.45) !important;
 }
 
 
@@ -81,6 +95,8 @@ img {
 
 .select-btn {
     font-size: 20px;
+    position: absolute; 
+    right: 200px;
 }
 
 .button:focus,
@@ -93,19 +109,17 @@ select:focus {
 #myBtn {
   display: none; 
   position: fixed; 
-  bottom: 5px; 
-  right: 200px;
+  bottom: 2px; 
+  right: 50%;
   z-index: 99; 
   font-size: 30px;
-  padding: 5px;
 }
 .fa-angle-up {
     color: black;
-    padding: 10px;
 }
 
 .fa-angle-up:hover {
-    color: rgba(201,212,57, 0.75);
+    color: darkseagreen;
 }
 
 
@@ -134,12 +148,18 @@ select:focus {
 /*table styles*/
 
 .table {
-    font-family: 'Questrial', sans-serif;    
+    font-family: 'Questrial', sans-serif;
+    padding: 10px;
+    width: 100%;
 }
 
 .table img {
     height: 200px;
     width: 200px;
+}
+
+.table td, .table th {
+    border: none !important;
 }
 
 th {
@@ -180,11 +200,14 @@ td {
 .card {
     padding: 5px;
     font-family: 'Questrial', sans-serif;
+    background-color: rgba(244,249,233,0.45);
+    border: 2px solid snow;
 }
 
 .card-header {
     padding: 10px;
-    background-color: #F4F9E9;
+    background-color: rgba(244,249,233,0.45);
+    border-bottom: none;
 }
 
 .card-title {
@@ -201,6 +224,11 @@ td {
 
 .card-body {
     padding: 10px;
+}
+
+.list-group-item {
+    background-color: rgba(244,249,233,0.45);
+    border: 1px solid snow;
 }
 
 
