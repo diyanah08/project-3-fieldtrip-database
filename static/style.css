@@ -89,6 +89,27 @@ select:focus {
   outline: none;
 }
 
+/*back to top button styles*/
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 200px;
+  z-index: 99; /* Make sure it does not overlap */
+  background-color: snow;
+  font-size: 30px;
+}
+
+#myBtn:hover {
+  background-color: white;
+  color: black; /* Add a dark-grey background on hover */
+}
+
+.fa-angle-up {
+    color: black;
+}
+
 
 /*carousel styles*/
 
