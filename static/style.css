@@ -6,7 +6,7 @@ body {
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    background-color: #FAE8EB;
+    background-image: url(/static/images/bg.jpg);
 }
 
 .container {
