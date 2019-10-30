@@ -33,7 +33,7 @@ def landingPage():
     
 @app.route('/all')
 def indexTest():
-    cursor = coll.find({});
+    cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
     return render_template('index.template.html', results=cursor)
 
 @app.route('/add')
