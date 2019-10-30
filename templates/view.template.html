@@ -2,10 +2,9 @@
 
 {%block content%}
 
+<div class="card mb-3" style="max-width: 100%;">
 <input type="submit" class="button colored-btn select-btn" value="Back" onclick="goBack()">
 <h1 class = "headers">{{result['name']}}</h1>
-
-<div class="card mb-3" style="max-width: 100%;">
   <div class="row no-gutters">
     <div class="col-md-4 card-image">
       <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}" class= "card-img"/></a>

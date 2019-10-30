@@ -157,7 +157,7 @@ def editDetailsForm(location_id):
     
 @app.route('/edit/<location_id>', methods=['POST'])
 def editDetails(location_id):
-
+    
     description = request.form['edit-description']
     activities = request.form.get('edit-activities')
     activitiesArr = [x.strip() for x in activities.split('\n')]
