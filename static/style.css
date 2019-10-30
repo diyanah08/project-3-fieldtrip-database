@@ -72,6 +72,7 @@ p {
     font-family: 'Questrial', sans-serif;
     font-weight: bolder;
     margin: 5px;
+    border-radius: 10px;
 }
 
 .begin {
@@ -180,6 +181,10 @@ td {
     font-size: 15px;
 }
 
+.row {
+    margin: 30px;
+}
+
 .form-check {
     padding-left: 50px;
 }
@@ -246,4 +251,29 @@ td {
     font-family: 'Bree Serif', serif;
     font-size: 17px;
     font-weight: bolder;
+}
+
+/*media query*/
+
+@media (max-width: 765px) {
+  .buttonSearch {
+    top: 30%;
+    margin-top: -100px;
+    }
+    
+    h1 {
+        font-size: 60px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    th {
+    font-size: 16px;
+    }
+    
+    td {
+        font-size: 13px;
+    }
 }
