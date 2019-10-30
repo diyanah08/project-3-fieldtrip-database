@@ -20,8 +20,8 @@
         <p class="details">Themes: {% for each_theme in result['themes']%}| {{each_theme}} |{%endfor%}</p>
         <p class="details">Age-group: {% for each_age in result['age_group']%}| {{each_age}} |{%endfor%}</p>
         <div>&nbsp;</div>
-        <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><button type="button" class="button colored-btn view-and-delete">Edit Details</button></a>
         <a href="{{ url_for('editAddressForm', location_id=result['_id']) }}"><button type="button" class="button colored-btn view-and-delete">Edit Contact</button></a>
+        <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><button type="button" class="button colored-btn view-and-delete">Edit Infomation</button></a>
         <button type="button" class="button colored-btn view-and-delete" data-toggle="modal" data-target="#delete-info" data-whatever="@mdo">Delete Entry</button>
       </div>
     </div>

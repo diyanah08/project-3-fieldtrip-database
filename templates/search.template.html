@@ -65,7 +65,7 @@
           {%endfor%}
         </ul>
         <div class="card-body">
-          <a href="{{ url_for('showDetails', location_id=each_result['_id']) }}"><input type="submit" class="button colored-btn view-and-delete" value="Details"></a>
+          <a href="{{ url_for('showDetails', location_id=each_result['_id']) }}"><input type="submit" class="button colored-btn view-and-delete" value="Information"></a>
           <a href="{{ url_for('showAddress', location_id=each_result['_id']) }}"><input type="submit" class="button colored-btn view-and-delete" value="Contact"></a>
         </div>
       </div>
