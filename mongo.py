@@ -47,7 +47,7 @@ def add():
     filename = images_upload_set.save(image)
     name = request.form.get('name')
     address = request.form['address']
-    email = request.form.get['contact']
+    email = request.form['contact']
     description = request.form['description']
     activities = request.form.get('activities')
     activitiesArr = [x.strip() for x in activities.split("\n")]
