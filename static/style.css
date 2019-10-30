@@ -141,8 +141,8 @@ select:focus {
 
 .table {
     font-family: 'Questrial', sans-serif;
-    padding: 10px;
-    width: 100%;
+    margin: 10px;
+    width: 98%;
 }
 
 .table img {
@@ -152,6 +152,7 @@ select:focus {
 
 .table td, .table th {
     border: none !important;
+    padding: 5px;
 }
 
 th {

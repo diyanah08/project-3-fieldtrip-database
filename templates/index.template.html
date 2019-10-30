@@ -6,12 +6,10 @@
     <div class = "table-responsive">
         <table class='table'>
             <thead>
+                {%for each_result in results %}
                 <tr>
                     <th>
-                        &nbsp;
-                    </th>
-                    <th>
-                        Name
+                       <a href="{{ url_for('viewInfoPage', location_id=each_result['_id']) }}"><button class = "button colored-btn view-and-delete">{{each_result['name']}}</button></a>
                     </th>
                     <th>
                         Description
@@ -25,19 +23,12 @@
                     <th>
                         Price
                     </th>
-                    <th>
-                        &nbsp;
-                    </th>
                 </tr>
             </thead>
             <tbody>
-            {%for each_result in results %}
                 <tr>
                     <td>
                         <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}"/></a>
-                    </td>
-                    <td>
-                        <p class = "search-name">{{each_result['name']}}</p>
                     </td>
                     <td>
                         {{each_result['description']}}
@@ -54,9 +45,6 @@
                     </td>
                     <td>
                         {{each_result['price']}}
-                    </td>
-                    <td>
-                        <a href="{{ url_for('viewInfoPage', location_id=each_result['_id']) }}"><button class = "button colored-btn view-and-delete">View</button></a>
                     </td>
                 </tr>
             {%endfor%}
