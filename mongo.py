@@ -24,7 +24,7 @@ conn = pymongo.MongoClient(MONGO_URI)
 coll = conn[DATABASE_NAME][COLLECTION_NAME]
 
 themes = ["Animals", "Cultural", "Discovery", "Nature", "Occupation", "Singapore", "The World", "Transportation", "Others"]
-age = ["N1", "N2", "K1","K2", "All"]
+age = ["N1", "N2", "K1","K2"]
 prices = ["Free", "Paid", "Both"]
 
 @app.route('/')
