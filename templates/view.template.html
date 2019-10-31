@@ -12,12 +12,12 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class = "card-title-bigger">{{result['price']}}</h5>
-        <p class="details">Address: {{result['address']}}</p>
-        <p class="details">Email: {{result['email']}}</p>
-        <p class="details">Description: {{result['description']}}</p>
-        <p class="details">Activities: {% for each_activity in result['activities']%}| {{each_activity}} |{%endfor%}</p>
-        <p class="details">Themes: {% for each_theme in result['themes']%}| {{each_theme}} |{%endfor%}</p>
-        <p class="details">Age-group: {% for each_age in result['age_group']%}| {{each_age}} |{%endfor%}</p>
+        <p class="details"><span class = "bold">Address:</span> {{result['address']}}</p>
+        <p class="details"><span class = "bold">Email:</span> {{result['email']}}</p>
+        <p class="details"><span class = "bold">Description:</span> {{result['description']}}</p>
+        <p class="details"><span class = "bold">Activities:</span> {% for each_activity in result['activities']%}| {{each_activity}} |{%endfor%}</p>
+        <p class="details"><span class = "bold">Themes:</span> {% for each_theme in result['themes']%}| {{each_theme}} |{%endfor%}</p>
+        <p class="details"><span class = "bold">Age-Group:</span> {% for each_age in result['age_group']%}| {{each_age}} |{%endfor%}</p>
         <div>&nbsp;</div>
         <a href="{{ url_for('editAddressForm', location_id=result['_id']) }}"><button type="button" class="button colored-btn view-and-delete">Edit Contact</button></a>
         <a href="{{ url_for('editDetailsForm', location_id=result['_id']) }}"><button type="button" class="button colored-btn view-and-delete">Edit Infomation</button></a>

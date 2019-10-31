@@ -57,9 +57,12 @@
         </div>
         <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}" class="card-img-top" alt="Image not found" onerror="this.onerror=null;this.src='static/images/logo.jpg';"/></a>
         <div class="card-body">
-          {{each_result['price']}} {% for each_age in each_result['age_group']%} |{{each_age}}| {%endfor%}
+          <span class = "bold">Price:</span> {{each_result['price']}}
+          </br>
+          <span class = "bold">Age-group:</span> {% for each_age in each_result['age_group']%} |{{each_age}}| {%endfor%}
         </div>
         <ul class="list-group list-group-flush">
+            <li class="list-group-item bold">Themes:</li>
           {% for each_theme in each_result['themes']%}
             <li class="list-group-item">{{each_theme}}</li>
           {%endfor%}

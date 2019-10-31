@@ -32,6 +32,12 @@ p {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 5px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .headers {
@@ -73,6 +79,7 @@ p {
     font-family: 'Questrial', sans-serif;
     font-size: 20px;
     font-weight: bolder;
+    letter-spacing: 1px;
     color: coral !important;
 }
 
@@ -88,6 +95,8 @@ p {
     font-weight: bolder;
     margin: 5px;
     border-radius: 10px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
 }
 
 .begin {
@@ -159,6 +168,8 @@ select:focus {
     font-family: 'Questrial', sans-serif;
     margin: 10px;
     width: 98%;
+    letter-spacing: 1px;
+    word-spacing: 3px;
 }
 
 .table img {
@@ -168,7 +179,7 @@ select:focus {
 
 .table td, .table th {
     border: none !important;
-    padding: 5px;
+    padding: 20px;
 }
 
 th {
@@ -194,6 +205,8 @@ td {
 .add-form {
     font-family: 'Questrial', sans-serif;
     font-size: 15px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
 }
 
 .row {
@@ -221,6 +234,8 @@ td {
     font-family: 'Questrial', sans-serif;
     background-color: rgba(244,249,233,0.45);
     border: 2px solid snow;
+    letter-spacing: 1px;
+    word-spacing: 3px;
 }
 
 .card-img {

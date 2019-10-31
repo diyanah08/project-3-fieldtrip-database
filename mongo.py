@@ -23,9 +23,9 @@ COLLECTION_NAME = 'fieldTripLocations'
 conn = pymongo.MongoClient(MONGO_URI)
 coll = conn[DATABASE_NAME][COLLECTION_NAME]
 
-themes = ["Occupation", "Nature", "Conservation", "Museums", "Others"]
+themes = ["Animals", "Cultural", "Discovery", "Nature", "Occupation", "Singapore", "The World", "Transportation", "Others"]
 age = ["N1", "N2", "K1","K2", "All"]
-prices = ["Both", "Free", "Paid"]
+prices = ["Free", "Paid", "Both"]
 
 @app.route('/')
 def landingPage():
@@ -105,13 +105,6 @@ def searchForm():
         prices=prices, search_name=search_name, search_age=search_age,
         search_theme=search_theme, search_price=search_price)
 
-@app.route('/location/<location_id>')
-def showAddress(location_id):
-    result = coll.find_one({
-        '_id':ObjectId(location_id)
-    })
-    return render_template("show_address.template.html", result=result)
-
 @app.route('/edit-location/<location_id>')
 def editAddressForm(location_id):
     result = coll.find_one({
@@ -139,13 +132,6 @@ def editAddress(location_id):
     })
     
     return render_template("show_address.template.html", result=result)
-
-@app.route('/details/<location_id>')
-def showDetails(location_id):
-    result = coll.find_one({
-        '_id':ObjectId(location_id)
-    })
-    return render_template("show_details.template.html", result=result)
 
 @app.route('/edit/<location_id>')
 def editDetailsForm(location_id):
