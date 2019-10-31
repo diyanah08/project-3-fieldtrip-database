@@ -51,7 +51,7 @@ p {
 .navbar-brand {
     font-family: 'Permanent Marker', cursive;
     font-size: 40px;
-    color: #f37d5a !important;
+    color: coral !important;
 }
 
 .logo {
@@ -59,11 +59,21 @@ p {
     height: 70px;
 }
 
+.navbar-toggler {
+    font-size: 2px;
+    line-height: 0;
+}
+
+.navbar-toggler-icon {
+    width: 15px;
+    height: 15px;
+}
+
 .nav-link {
     font-family: 'Questrial', sans-serif;
     font-size: 20px;
     font-weight: bolder;
-    color: #f37d5a !important;
+    color: coral !important;
 }
 
 .bg-light {
@@ -288,16 +298,6 @@ td {
     .nav-link {
         font-size: 16px;
         margin-left: 20px;
-    }
-    
-    .navbar-toggler {
-        font-size: 2px;
-        line-height: 0;
-    }
-    
-    .navbar-toggler-icon {
-        width: 15px;
-        height: 15px;
     }
     
     .logo {
