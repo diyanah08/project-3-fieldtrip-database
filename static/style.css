@@ -54,6 +54,11 @@ p {
     color: #f37d5a !important;
 }
 
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
 .nav-link {
     font-family: 'Questrial', sans-serif;
     font-size: 20px;
@@ -255,10 +260,17 @@ td {
 
 /*media query*/
 
+@media (max-width: 991px) {
+    .nav-link {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+}
+    
 @media (max-width: 765px) {
-  .buttonSearch {
-    top: 30%;
-    margin-top: -100px;
+    .buttonSearch {
+        top: 30%;
+        margin-top: -100px;
     }
     
     h1 {
@@ -267,6 +279,30 @@ td {
     
     p {
         font-size: 16px;
+    }
+    
+    .navbar-brand {
+        font-size: 23px;
+    }
+    
+    .nav-link {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+    
+    .navbar-toggler {
+        font-size: 2px;
+        line-height: 0;
+    }
+    
+    .navbar-toggler-icon {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
     }
     
     th {
