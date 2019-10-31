@@ -51,14 +51,14 @@ p {
 .navbar-brand {
     font-family: 'Permanent Marker', cursive;
     font-size: 40px;
-    color: darkseagreen !important;
+    color: #f37d5a !important;
 }
 
 .nav-link {
     font-family: 'Questrial', sans-serif;
     font-size: 20px;
     font-weight: bolder;
-    color: darkseagreen !important;
+    color: #f37d5a !important;
 }
 
 .bg-light {
