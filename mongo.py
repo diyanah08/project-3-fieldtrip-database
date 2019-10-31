@@ -172,12 +172,12 @@ def viewInfoPage(location_id):
 
 @app.route('/delete-invalid')
 def cannotDelete():
-    cursor = coll.find({});
+    cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
     return render_template('delete_invalid.template.html', results=cursor)
     
 @app.route('/deleted')
 def succeed():
-    cursor = coll.find({});
+    cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
     return render_template('delete_succeed.template.html', results=cursor)
     
 @app.route('/view/<location_id>', methods=['POST'])
