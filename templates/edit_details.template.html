@@ -23,7 +23,7 @@
     <label class="col-sm-3 col-form-label">Themes:</label>
       <div class="col-sm-9 form-check">
         {%for t in themes%}
-          <input type="checkbox" class="form-check-input" name="edit-theme" value="{{t}}"/><label class="form-check">{{t}}</label>
+          <input type="checkbox" class="form-check-input" name="edit-theme" value="{{t}}"{%if t in result['themes']%} checked {%endif%}/><label class="form-check">{{t}}</label>
         {%endfor%}
       </div>
   </div>

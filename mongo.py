@@ -29,7 +29,8 @@ prices = ["Free", "Paid", "Both"]
 
 @app.route('/')
 def landingPage():
-    return render_template('landing_page.template.html')
+    cursor = coll.find({});
+    return render_template('landing_page.template.html', results=cursor)
     
 @app.route('/all')
 def indexTest():
@@ -131,7 +132,7 @@ def editAddress(location_id):
         '_id':ObjectId(location_id)
     })
     
-    return render_template("show_address.template.html", result=result)
+    return render_template("view_after_edit.template.html", result=result)
 
 @app.route('/edit/<location_id>')
 def editDetailsForm(location_id):
@@ -139,12 +140,13 @@ def editDetailsForm(location_id):
         '_id':ObjectId(location_id)
     })
     
+    
     return render_template("edit_details.template.html", result=result, themes=themes)
     
 @app.route('/edit/<location_id>', methods=['POST'])
 def editDetails(location_id):
     
-    description = request.form['edit-description']
+    description = request.form('edit-description')
     activities = request.form.get('edit-activities')
     activitiesArr = [x.strip() for x in activities.split('\n')]
     theme = request.form.getlist('edit-theme')
@@ -160,7 +162,7 @@ def editDetails(location_id):
         '_id':ObjectId(location_id)
     })
     
-    return render_template("show_details.template.html", result=result)
+    return render_template("view_after_edit.template.html", result=result)
 
 @app.route('/view/<location_id>')
 def viewInfoPage(location_id):
