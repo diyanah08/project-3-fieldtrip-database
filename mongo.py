@@ -33,7 +33,7 @@ def landingPage():
     return render_template('landing_page.template.html', results=cursor)
     
 @app.route('/all')
-def indexTest():
+def index():
     cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
     return render_template('index.template.html', results=cursor)
 
@@ -146,7 +146,7 @@ def editDetailsForm(location_id):
 @app.route('/edit/<location_id>', methods=['POST'])
 def editDetails(location_id):
     
-    description = request.form('edit-description')
+    description = request.form['edit-description']
     activities = request.form.get('edit-activities')
     activitiesArr = [x.strip() for x in activities.split('\n')]
     theme = request.form.getlist('edit-theme')
