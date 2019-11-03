@@ -146,8 +146,6 @@ def editDetailsForm(location_id):
 @app.route('/edit/<location_id>', methods=['POST'])
 def editDetails(location_id):
     
-    image = request.files.get('edit-image')
-    filename = images_upload_set.save(image)
     description = request.form['edit-description']
     activities = request.form.get('edit-activities')
     activitiesArr = [x.strip() for x in activities.split('\n')]
@@ -158,7 +156,7 @@ def editDetails(location_id):
     coll.update(
        { "_id": ObjectId(location_id) },
        {
-         '$set': { "description": description, "activities":activitiesArr, "themes":theme, "age_group": age_group, "price": price, "image": { 'image_url' : images_upload_set.url(filename)}},
+         '$set': { "description": description, "activities":activitiesArr, "themes":theme, "age_group": age_group, "price": price},
        }
     )
     

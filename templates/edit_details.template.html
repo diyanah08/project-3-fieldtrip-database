@@ -4,13 +4,7 @@
 
 <input type="submit" class="button colored-btn select-btn" value="Back" onclick="goBack()">
 <h1 class = "headers">{{result['name']}}</h1>
-<form class='form' enctype="multipart/form-data" method="POST">
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Change Image:</label>
-    <div class="col-sm-10">
-      <input type='file' name='edit-image' required/>
-    </div>
-  </div>
+<form class='form' method="POST">
   <div class="form-group row">
       <label class="col-sm-3 col-form-label">Age Group:</label>
       <div class="col-sm-9 form-check">
@@ -29,8 +23,7 @@
     <label class="col-sm-2 col-form-label">Activities: (separate each activity with a new line)</label>
     <div class="col-sm-10">
       <textarea id ="edit-activity" class = "form-control" rows="5" name="edit-activities">{% for each_activity in result['activities']%}{{each_activity}}
-{%endfor%}
-      </textarea>
+{%endfor%}</textarea>
     </div>
   </div>
   <div class="form-group row">
