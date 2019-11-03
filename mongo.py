@@ -141,20 +141,24 @@ def editDetailsForm(location_id):
     })
     
     
-    return render_template("edit_details.template.html", result=result, themes=themes)
+    return render_template("edit_details.template.html", result=result, themes=themes, age=age, prices=prices)
     
 @app.route('/edit/<location_id>', methods=['POST'])
 def editDetails(location_id):
     
+    image = request.files.get('edit-image')
+    filename = images_upload_set.save(image)
     description = request.form['edit-description']
     activities = request.form.get('edit-activities')
     activitiesArr = [x.strip() for x in activities.split('\n')]
     theme = request.form.getlist('edit-theme')
+    age_group = request.form.getlist('edit-age-group')
+    price = request.form.get('edit-price')
     
     coll.update(
        { "_id": ObjectId(location_id) },
        {
-         '$set': { "description": description, "activities":activitiesArr, "themes":theme},
+         '$set': { "description": description, "activities":activitiesArr, "themes":theme, "age_group": age_group, "price": price, "image": { 'image_url' : images_upload_set.url(filename)}},
        }
     )
     
