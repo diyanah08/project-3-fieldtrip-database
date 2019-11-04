@@ -121,7 +121,7 @@ select:focus {
   outline: none;
 }
 
-/*back to top button styles*/
+/*back to top button styles edited from code available at w3schools [https://www.w3schools.com/howto/howto_js_scroll_to_top.asp]*/
 
 #myBtn {
   display: none; 
