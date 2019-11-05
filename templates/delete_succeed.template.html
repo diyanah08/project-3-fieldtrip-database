@@ -34,7 +34,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}" alt="Image not found" onerror="this.onerror=null;this.src='/static/images/logo.jpg';"/></a>
+                        <img src="{{each_result['image']['image_url']}}" alt="Image not found" onerror="this.onerror=null;this.src='/static/images/logo.jpg';"/>
                     </td>
                     <td>
                         {{each_result['description']}}

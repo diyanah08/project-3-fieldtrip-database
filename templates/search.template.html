@@ -57,7 +57,7 @@
         <div class="card-header">
           <h5 class="card-title">{{each_result['name']}}</h5>
         </div>
-        <a href="{{each_result['image']['image_url']}}" target="popup" onclick="window.open('{{each_result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{each_result['image']['image_url']}}" class="card-img-top" alt="Image not found" onerror="this.onerror=null;this.src='static/images/logo.jpg';"/></a>
+        <img src="{{each_result['image']['image_url']}}" class="card-img-top" alt="Image not found" onerror="this.onerror=null;this.src='static/images/logo.jpg';"/>
         <div class="card-body">
           <span class = "bold">Price:</span> {{each_result['price']}}
           </br>
@@ -74,7 +74,7 @@
         </div>
       </div>
     </div>
-  {%endfor%}
+    {%endfor%}
 </div>
 
 {%endblock%}

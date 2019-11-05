@@ -7,7 +7,7 @@
 <h1 class = "headers">{{result['name']}}</h1>
   <div class="row no-gutters">
     <div class="col-md-4 card-image">
-      <a href="{{result['image']['image_url']}}" target="popup" onclick="window.open('{{result['image']['image_url']}}','popup','width=600,height=600'); return false;"><img src="{{result['image']['image_url']}}" class="card-img-top" alt="Image not found" onerror="this.onerror=null;this.src='/static/images/logo.jpg';"/></a>
+      <img src="{{result['image']['image_url']}}" class="card-img-top" alt="Image not found" onerror="this.onerror=null;this.src='/static/images/logo.jpg';"/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
