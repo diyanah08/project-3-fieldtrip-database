@@ -4,58 +4,58 @@
 
 <!--allow user to know delete was not able and why-->
 
-    <div class="alert alert-danger" role="alert">
-      Unable to delete. Invalid KEY.
-    </div>
-    
-    <h1 class = "headers">All Locations</h1>
-    <div class = "table-responsive">
-        <table class='table'>
-            <thead>
-                {%for each_result in results %}
-                <tr>
-                    <th>
-                       <a href="{{ url_for('viewInfoPage', location_id=each_result['_id']) }}"><button class = "button colored-btn view-and-delete">{{each_result['name']}}</button></a>
-                    </th>
-                    <th>
-                        Description
-                    </th>
-                    <th>
-                        Themes
-                    </th>
-                    <th>
-                        Age Group
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="{{each_result['image']['image_url']}}" alt="Image not found" onerror="this.onerror=null;this.src='/static/images/logo.jpg';"/>
-                    </td>
-                    <td>
-                        {{each_result['description']}}
-                    </td>
-                    <td>
-                        {% for each_theme in each_result['themes']%}
-                            {{each_theme}}</br>
-                        {%endfor%}
-                    </td>
-                    <td>
-                        {% for each_age in each_result['age_group']%}
-                            {{each_age}}</br>
-                        {%endfor%}
-                    </td>
-                    <td>
-                        {{each_result['price']}}
-                    </td>
-                </tr>
+<div class="alert alert-danger" role="alert">
+    Unable to delete. Invalid KEY.
+</div>
+
+<h1 class="headers">All Locations</h1>
+<div class="table-responsive">
+    <table class='table'>
+        <thead>
+            {%for each_result in results %}
+            <tr>
+                <th>
+                    <a href="{{ url_for('viewInfoPage', location_id=each_result['_id']) }}"><button class = "button colored-btn view-and-delete">{{each_result['name']}}</button></a>
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Themes
+                </th>
+                <th>
+                    Age Group
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="{{each_result['image']['image_url']}}" alt="Image not found" onerror="this.onerror=null;this.src='/static/images/logo.jpg';" />
+                </td>
+                <td>
+                    {{each_result['description']}}
+                </td>
+                <td>
+                    {% for each_theme in each_result['themes']%} {{each_theme}}
+                    </br>
+                    {%endfor%}
+                </td>
+                <td>
+                    {% for each_age in each_result['age_group']%} {{each_age}}
+                    </br>
+                    {%endfor%}
+                </td>
+                <td>
+                    {{each_result['price']}}
+                </td>
+            </tr>
             {%endfor%}
-            </tbody>
-        </table>
-    </div>
+        </tbody>
+    </table>
+</div>
 
 {%endblock%}

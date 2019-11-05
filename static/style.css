@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    background-color: rgba(244,249,233,0.65);
+    background-color: rgba(244, 249, 233, 0.65);
     margin-top: 25px;
     margin-bottom: 25px;
     padding: 0px;
@@ -84,7 +84,7 @@ p {
 }
 
 .bg-light {
-    background-color: rgba(244,249,233,0.45) !important;
+    background-color: rgba(244, 249, 233, 0.45) !important;
 }
 
 
@@ -109,7 +109,7 @@ p {
 }
 
 .colored-btn {
-    background-color: rgba(201,212,57, 0.75);
+    background-color: rgba(201, 212, 57, 0.75);
 }
 
 .select-btn {
@@ -118,19 +118,20 @@ p {
 
 .button:focus,
 select:focus {
-  outline: none;
+    outline: none;
 }
 
 /*back to top button styles edited from code available at w3schools [https://www.w3schools.com/howto/howto_js_scroll_to_top.asp]*/
 
 #myBtn {
-  display: none; 
-  position: fixed; 
-  bottom: 2px; 
-  right: 50%;
-  z-index: 99; 
-  font-size: 30px;
+    display: none;
+    position: fixed;
+    bottom: 2px;
+    right: 50%;
+    z-index: 99;
+    font-size: 30px;
 }
+
 .fa-angle-up {
     color: black;
 }
@@ -152,7 +153,7 @@ select:focus {
 .buttonSearch {
     width: 100vw;
     padding: 15px;
-    background-color: rgba(244,249,233, 0.75);
+    background-color: rgba(244, 249, 233, 0.75);
     color: black;
     position: absolute;
     top: 50%;
@@ -177,7 +178,8 @@ select:focus {
     width: 200px;
 }
 
-.table td, .table th {
+.table td,
+.table th {
     border: none !important;
     padding: 20px;
 }
@@ -232,7 +234,7 @@ td {
     margin: 2px;
     padding: 5px;
     font-family: 'Questrial', sans-serif;
-    background-color: rgba(244,249,233,0.45);
+    background-color: rgba(244, 249, 233, 0.45);
     border: 2px solid snow;
     letter-spacing: 1px;
     word-spacing: 3px;
@@ -244,7 +246,7 @@ td {
 
 .card-header {
     padding: 10px;
-    background-color: rgba(244,249,233,0.45);
+    background-color: rgba(244, 249, 233, 0.45);
     border-bottom: none;
 }
 
@@ -269,7 +271,7 @@ td {
 }
 
 .list-group-item {
-    background-color: rgba(244,249,233,0.45);
+    background-color: rgba(244, 249, 233, 0.45);
     border: 1px solid snow;
 }
 
@@ -291,39 +293,39 @@ td {
         margin-left: 20px;
     }
 }
-    
+
 @media (max-width: 765px) {
     .buttonSearch {
         top: 30%;
         margin-top: -100px;
     }
-    
+
     h1 {
         font-size: 60px;
     }
-    
+
     p {
         font-size: 16px;
     }
-    
+
     .navbar-brand {
         font-size: 23px;
     }
-    
+
     .nav-link {
         font-size: 16px;
         margin-left: 20px;
     }
-    
+
     .logo {
         width: 40px;
         height: 40px;
     }
-    
+
     th {
-    font-size: 16px;
+        font-size: 16px;
     }
-    
+
     td {
         font-size: 13px;
     }

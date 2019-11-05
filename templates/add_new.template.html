@@ -1,11 +1,9 @@
-{% extends "layout.template.html" %}
-
-{%block content%}
+{% extends "layout.template.html" %} {%block content%}
 
 <!--C in CRUD function-->
 
-<div class = "add-form">
-  <h1 class = "headers">Add a Field Trip Location</h1>
+<div class="add-form">
+  <h1 class="headers">Add a Field Trip Location</h1>
   <form class='form' enctype="multipart/form-data" method="POST">
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Upload Image:</label>
@@ -16,47 +14,45 @@
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Name:</label>
       <div class="col-sm-10">
-        <input type ='text' class = "form-control" name='name' required/>
+        <input type='text' class="form-control" name='name' required/>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Address:</label>
       <div class="col-sm-10">
-        <input type ='text' class = "form-control" name='address'/>
+        <input type='text' class="form-control" name='address' required/>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Email:</label>
       <div class="col-sm-10">
-        <input type ='email' class = "form-control" name='contact'/>
+        <input type='email' class="form-control" name='contact' />
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Age Group:</label>
       <div class="col-sm-9 form-check">
         {%for a in age%}
-          <input type="checkbox" class="form-check-input" name="age-group" value="{{a}}"/><label class="form-check">{{a}}</label>
-        {%endfor%}
+        <input type="checkbox" class="form-check-input" name="age-group" value="{{a}}" /><label class="form-check">{{a}}</label> {%endfor%}
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Description:</label>
       <div class="col-sm-10">
-        <textarea ='about' class = "form-control" rows="10" name='description' placeholder="add a description for a location"></textarea>
+        <textarea='about' class="form-control" rows="10" name='description' placeholder="add a description for a location"></textarea>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Activities:</label>
       <div class="col-sm-10">
-        <textarea id ="activity" class = "form-control" rows="5" name='activities' placeholder="separate each activity with a new line"></textarea>
+        <textarea id="activity" class="form-control" rows="5" name='activities' placeholder="separate each activity with a new line"></textarea>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Themes:</label>
       <div class="col-sm-9 form-check">
         {%for t in themes%}
-          <input type="checkbox" class="form-check-input" name="theme" value="{{t}}"/><label class="form-check">{{t}}</label>
-        {%endfor%}
+        <input type="checkbox" class="form-check-input" name="theme" value="{{t}}" /><label class="form-check">{{t}}</label> {%endfor%}
       </div>
     </div>
     <div class="form-group row">
@@ -76,7 +72,7 @@
     <div class="form-group row">
       <input type="submit" class="button colored-btn select-btn" value="Add Entry">
     </div>
-   </form>
+  </form>
 </div>
 
 {%endblock%}

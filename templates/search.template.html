@@ -4,9 +4,9 @@
 
 <!--R in the CRUD function-->
 
-<h1 class = "headers">Search for a Field Trip Location</h1>
+<h1 class="headers">Search for a Field Trip Location</h1>
 
-<div class = "add-form">
+<div class="add-form">
   <form method="GET">
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Name:</label>
@@ -18,16 +18,14 @@
       <label class="col-sm-3 col-form-label">Age Group:</label>
       <div class="col-sm-9 form-check">
         {%for a in age%}
-          <input type="checkbox" class="form-check-input" name="search-age" value="{{a}}" {%if a in search_age %} checked {%endif%}/><label class="form-check">{{a}}</label>
-        {%endfor%}
+        <input type="checkbox" class="form-check-input" name="search-age" value="{{a}}" {%if a in search_age %} checked {%endif%}/><label class="form-check">{{a}}</label> {%endfor%}
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Themes:</label>
       <div class="col-sm-9 form-check">
         {%for t in themes%}
-          <input type="checkbox" class="form-check-input" name="search-theme" value="{{t}}" {%if t in search_theme %} checked {%endif%}/><label class="form-check">{{t}}</label>
-        {%endfor%}
+        <input type="checkbox" class="form-check-input" name="search-theme" value="{{t}}" {%if t in search_theme %} checked {%endif%}/><label class="form-check">{{t}}</label> {%endfor%}
       </div>
     </div>
     <div class="form-group row">
@@ -44,7 +42,7 @@
         </select>
       </div>
     </div>
-    <div class= "form-group row">
+    <div class="form-group row">
       <input type="submit" class="button colored-btn select-btn" value="Search">
     </div>
   </form>
@@ -52,29 +50,29 @@
 
 <div class="row">
   {%for each_result in results %}
-    <div class="col-sm-4 mb-3 mt-2">
-      <div class="card" style="height: 100%;">
-        <div class="card-header">
-          <h5 class="card-title">{{each_result['name']}}</h5>
-        </div>
-        <img src="{{each_result['image']['image_url']}}" class="card-img-top" alt="Image not found" onerror="this.onerror=null;this.src='static/images/logo.jpg';"/>
-        <div class="card-body">
-          <span class = "bold">Price:</span> {{each_result['price']}}
-          </br>
-          <span class = "bold">Age-group:</span> {% for each_age in each_result['age_group']%} |{{each_age}}| {%endfor%}
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item bold">Themes:</li>
-          {% for each_theme in each_result['themes']%}
-            <li class="list-group-item">{{each_theme}}</li>
-          {%endfor%}
-        </ul>
-        <div class="card-body">
-          <a href="{{ url_for('viewInfoPage', location_id=each_result['_id']) }}"><input type="submit" class="button colored-btn view-and-delete" value="View"></a>
-        </div>
+  <div class="col-sm-4 mb-3 mt-2">
+    <div class="card" style="height: 100%;">
+      <div class="card-header">
+        <h5 class="card-title">{{each_result['name']}}</h5>
+      </div>
+      <img src="{{each_result['image']['image_url']}}" class="card-img-top" alt="Image not found" onerror="this.onerror=null;this.src='static/images/logo.jpg';" />
+      <div class="card-body">
+        <span class="bold">Price:</span> {{each_result['price']}}
+        </br>
+        <span class="bold">Age-group:</span> {% for each_age in each_result['age_group']%} |{{each_age}}| {%endfor%}
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item bold">Themes:</li>
+        {% for each_theme in each_result['themes']%}
+        <li class="list-group-item">{{each_theme}}</li>
+        {%endfor%}
+      </ul>
+      <div class="card-body">
+        <a href="{{ url_for('viewInfoPage', location_id=each_result['_id']) }}"><input type="submit" class="button colored-btn view-and-delete" value="View"></a>
       </div>
     </div>
-    {%endfor%}
+  </div>
+  {%endfor%}
 </div>
 
 {%endblock%}
