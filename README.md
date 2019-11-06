@@ -129,10 +129,11 @@ If an entry is successfully added, an alert will appear hence users will be able
     - [BOOTSTRAP](https://getbootstrap.com/docs/4.3/getting-started/introduction/) was used for several components in the site.
 - CSS
     - [GOOGLE FONTS](https://fonts.google.com/) was used to provide a variety of fonts through out the site.
+    - [FONT AWESOME ICONS](https://fontawesome.com/icons) was used for the back-to-top botton.
 - JavaScript
 - Python
 - Flask
-- [MongoDB Atlas]( https://www.mongodb.com/cloud/atlas)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 	- Used as the database for the site
 - GitHub
 	- Used for version control 
@@ -189,15 +190,15 @@ The steps were:
 
 
 | BROWSERS          | DEVICES                                    | TEST OUTCOMES                                                                                                                                                         |
-| ----------------- |:------------------------------------------:| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Windows Edge      | Windows 10                                 | Testing appeared to pass                                                                                                                                              |
-| Google Chrome     | Windows 10, Samsung S9, Samsung Galaxy Tab | Testing appeared to pass                                                                                                                                              |
-| Firefox           | Windows 10                                 | Testing appeared to pass                                                                                                                                              |
-| Safari            | iPhone 6 & 7, iPad Pro, MacBook Pro        |  |
-| Samsung Internet  | Samsung S9, Samsung Galaxy Tab             | Testing appeared to pass                                                                                                                                              |
-| Internet Explorer | Windows 10                                 |                                                                                                                          |
+| ----------------- |:------------------------------------------:| -------------------------------------------------------------------------:|
+| Windows Edge      | Windows 10                                 | Testing appeared to pass                                                  |
+| Google Chrome     | Windows 10, Samsung S9, Samsung Galaxy Tab | Testing appeared to pass                                                  |
+| Firefox           | Windows 10                                 | Testing appeared to pass                                                  |
+| Safari            | iPhone 6 & 7, iPad Pro, MacBook Pro        | Testing appeared to pass                                                  |
+| Samsung Internet  | Samsung S9, Samsung Galaxy Tab             | Testing appeared to pass                                                  |
+| Internet Explorer | Windows 10                                 | Images in search results are not able to be the height of the card-image. |
 
-###### Unfortunately the issues reflected above have yet to be resolved at the point of submission and the issues have been noted as part of the features left to implemented.
+###### Unfortunately the issues reflected above have yet to be resolved at the point of submission.
 
 ## Deployment
 This project was hosted through GitHub Pages.

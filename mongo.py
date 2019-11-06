@@ -27,16 +27,20 @@ themes = ["Animals", "Cultural", "Discovery", "Nature", "Occupation", "Singapore
 age = ["N1", "N2", "K1","K2"]
 prices = ["Free", "Paid", "Both"]
 
+
+# landing page
 @app.route('/')
 def landingPage():
     cursor = coll.find({});
     return render_template('landing_page.template.html', results=cursor)
     
+# view all 
 @app.route('/all')
 def index():
     cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
     return render_template('index.template.html', results=cursor)
 
+# add entry
 @app.route('/add')
 def addForm():
     return render_template('add_new.template.html', themes=themes, age=age, prices=prices)
@@ -72,6 +76,7 @@ def add():
     
     return render_template('add_success.template.html', themes=themes, age=age, prices=prices, image=image, filename=filename, name=name, address=address, email=email, description=description, activities=activities, theme=theme, age_group=age_group, price=price)
 
+# search entry
 @app.route('/search')
 def searchForm():
     
@@ -106,6 +111,17 @@ def searchForm():
         prices=prices, search_name=search_name, search_age=search_age,
         search_theme=search_theme, search_price=search_price)
 
+# view an entry 
+@app.route('/view/<location_id>')
+def viewInfoPage(location_id):
+    result = coll.find_one({
+        '_id':ObjectId(location_id)
+    })
+    
+    return render_template('view.template.html', result=result)
+
+# edit entry
+# edit contact
 @app.route('/edit-location/<location_id>')
 def editAddressForm(location_id):
     result = coll.find_one({
@@ -134,6 +150,7 @@ def editAddress(location_id):
     
     return render_template("view_after_edit.template.html", result=result)
 
+# edit information
 @app.route('/edit/<location_id>')
 def editDetailsForm(location_id):
     result = coll.find_one({
@@ -142,7 +159,8 @@ def editDetailsForm(location_id):
     
     
     return render_template("edit_details.template.html", result=result, themes=themes, age=age, prices=prices)
-    
+ 
+# after edit page  
 @app.route('/edit/<location_id>', methods=['POST'])
 def editDetails(location_id):
     
@@ -166,24 +184,7 @@ def editDetails(location_id):
     
     return render_template("view_after_edit.template.html", result=result)
 
-@app.route('/view/<location_id>')
-def viewInfoPage(location_id):
-    result = coll.find_one({
-        '_id':ObjectId(location_id)
-    })
-    
-    return render_template('view.template.html', result=result)
-
-@app.route('/delete-invalid')
-def cannotDelete():
-    cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
-    return render_template('delete_invalid.template.html', results=cursor)
-    
-@app.route('/deleted')
-def succeed():
-    cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
-    return render_template('delete_succeed.template.html', results=cursor)
-    
+# deleting an entry
 @app.route('/view/<location_id>', methods=['POST'])
 def deleteInfo(location_id):
     
@@ -198,6 +199,19 @@ def deleteInfo(location_id):
             )
             return redirect('/deleted')
     return redirect('/delete-invalid')
+
+# unsuccessful delete
+@app.route('/delete-invalid')
+def cannotDelete():
+    cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
+    return render_template('delete_invalid.template.html', results=cursor)
+
+# successful delete 
+@app.route('/deleted')
+def succeed():
+    cursor = coll.find({}).sort([("name", pymongo.ASCENDING)]);
+    return render_template('delete_succeed.template.html', results=cursor)
+
 
 if __name__ == '__main__':
 	app.run(host=os.environ.get('IP'),
