@@ -67,7 +67,7 @@ On entering the site, the landing page will have a carousel of images and an ins
 
 Once entered, the site is easily navigated through using the navigation bar in the header.
 
-To view the original wireframe of the website click [here.]()
+To view the original wireframe of the website click [here.](https://github.com/diyanah08/project-3-fieldtrip-database/blob/master/static/images/skeleton.jpg)
 
 
 #### Surface:
