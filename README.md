@@ -60,7 +60,7 @@ Navigation will include:
 	- Search for location
 	- Add location
 
-To view the ER diagram for the database click [here.]()
+To view the ER diagram for the database click [here.](https://github.com/diyanah08/project-3-fieldtrip-database/blob/master/static/images/er-diagram.jpg)
 
 #### Skeleton:
 On entering the site, the landing page will have a carousel of images and an instruction on how to navigate through the site.
