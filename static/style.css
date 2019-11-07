@@ -34,6 +34,7 @@ p {
     margin-bottom: 5px;
     letter-spacing: 1px;
     word-spacing: 3px;
+    line-height: 2;
 }
 
 .bold {
@@ -197,6 +198,7 @@ th {
 
 td {
     font-size: 16px;
+    line-height: 2;
 }
 
 .search-name {
@@ -270,7 +272,7 @@ td {
 }
 
 .card-body {
-    padding: 10px;
+    padding-left: 30px;
 }
 
 .view-one {
