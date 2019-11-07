@@ -156,10 +156,17 @@ select:focus {
     background-color: rgba(244, 249, 233, 0.75);
     color: black;
     position: absolute;
-    top: 50%;
+    top: 40%;
     margin-top: -100px;
     z-index: 5;
     text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+}
+
+.title-logo {
+    color: coral !important;
+    background-color: rgb(218,238,229);
 }
 
 
