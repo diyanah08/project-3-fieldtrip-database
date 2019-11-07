@@ -123,6 +123,7 @@ If an entry is successfully added, an alert will appear hence users will be able
 ### Features Left to Implement
 1) Ability to change the image uploaded and upload multiple images
 2) Ability for user to upload files to share their lesson plans and other user to download them.
+3) Addition of mapbox to the address/auto complete of addresses
 
 ## Technologies Used
 - HTML
