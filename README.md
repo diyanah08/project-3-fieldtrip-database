@@ -4,8 +4,8 @@ This website aims to help preschool educators add and search for suitable field 
 
 This website aims to create a community of preschool educators who collaborate and share their resources and experiences on field trips with each other. This includes contact details and activity ideas for the location.
 
-## Demo
-A live demo can be found [here.]( https://fieldtrip-database.herokuapp.com/)
+## The website
+A website can be found [here.]( https://fieldtrip-database.herokuapp.com/)
 
 ## UX
 This website can be used by preschool educators who would like share their field trip locations and those looking for field trip ideas.
@@ -121,9 +121,9 @@ If an entry is successfully added, an alert will appear hence users will be able
 
 
 ### Features Left to Implement
-1) Ability to change the image uploaded and upload multiple images
+1) Ability to change the image uploaded and upload multiple images.
 2) Ability for user to upload files to share their lesson plans and other user to download them.
-3) Addition of mapbox to the address/auto complete of addresses
+3) Addition of mapbox to the address/auto complete of addresses.
 
 ## Technologies Used
 - HTML
